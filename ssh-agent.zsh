@@ -15,6 +15,9 @@ function add_github_key {
   github_key=~/.ssh/github_key
   if [[ -e github_key ]]; then
     /usr/bin/ssh-add github_key
+    echo added github ssh key
+  else
+    echo no github ssh key found :c
   fi
 }
 
@@ -27,4 +30,5 @@ if [ -f "${SSH_ENV}" ]; then
     }
 else
     start_agent;
+    add_github_key;
 fi
