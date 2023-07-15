@@ -14,7 +14,7 @@ function add_github_key {
   echo "Adding github key..."
   github_key=~/.ssh/github_key
   if [[ -e github_key ]]; then
-    /usr/bin/ssh-add github_key
+    /usr/bin/ssh-add $github_key
     echo added github ssh key
   else
     echo no github ssh key found :c
