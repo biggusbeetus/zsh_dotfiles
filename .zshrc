@@ -153,5 +153,6 @@ alias nyxt='flatpak run engineer.atlas.Nyxt'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 source $HOME/.config/zsh/fzf.zsh
+source $HOME/.config/zsh/ssh-agent.zsh
 
 eval "$(starship init zsh)"
