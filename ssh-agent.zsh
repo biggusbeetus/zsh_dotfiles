@@ -6,18 +6,18 @@ function start_agent {
     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
     echo succeeded
     chmod 600 "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
+    . "${SSH_ENV}" 1> /dev/null
     /usr/bin/ssh-add;
 }
 
 function add_github_key {
   echo "Adding github key..."
   github_key=~/.ssh/github_key
-  if [[ -e github_key ]]; then
-    /usr/bin/ssh-add $github_key
-    echo added github ssh key
+  if [[ -e $github_key ]]; then
+    /usr/bin/ssh-add $github_key 1> /dev/null
+    echo "Added github ssh key!"
   else
-    echo no github ssh key found :c
+    echo "No github ssh key found at $github_key :c"
   fi
 }
 
@@ -25,7 +25,7 @@ function add_github_key {
 
 if [ -f "${SSH_ENV}" ]; then
     . "${SSH_ENV}" > /dev/null
-    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ 1> /dev/null || {
         start_agent;
         add_github_key;
     }
