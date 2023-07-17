@@ -1,26 +1,25 @@
 _find() {
-  fdfind --hidden --follow --exclude ".git" . $path
+  local find_path=$1
+  local find_options=( ${@:2} )
+  fdfind $find_options --unrestricted --hidden --follow --exclude ".git" -- . $find_path
 }
 _fze() {
-  fuzzy() {
-    fzf --preview 'batcat -n --color=always {}' 
-  }
-  if [[ -n $2 ]]; then
-    $1 $(_find $2 | fuzzy) 
-  else
-    $1 $(_find . | fuzzy )
+  local find_path=$2
+  local command=$1
+  if [[ -z $find_path ]]; then
+    find_path=/
   fi
-
+    $command $(_find $find_path | fzf ) 
 }
 
 _fzcd() {
   fuzzy() {
     fzf --preview 'tree -C {}| head -200'
   }
-  if [[ -n $1 ]] ; then
-    cd $(_find $1 | fuzzy )
-  else
-    cd $(_find . | fuzzy )
+  local find_path=$1
+  if [[ -z $find_path ]] ; then
+    find_path=/
   fi
+    cd $(_find $find_path --type directory | fuzzy )
 }
 

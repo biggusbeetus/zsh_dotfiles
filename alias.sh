@@ -5,7 +5,7 @@ alias -g bat="batcat"
 alias -g bman="batman"
 alias -g brg="batgrep"
 alias -g pbat="prettybat"
-alias -g fd="fdfind --unrestricted"
+alias -g fd="fdfind"
 
 alias -g fzcd=_fzcd
 alias -g fze=_fze
