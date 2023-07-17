@@ -7,9 +7,8 @@ alias -g brg="batgrep"
 alias -g pbat="prettybat"
 alias -g fd="fdfind"
 
-alias -g fzcd=_fzcd
-alias -g fze=_fze
-alias -g fznvim=_fznvim
+alias -g fcd=_fuzzy_cd
+alias -g fe=_fuzzy_execute
 
 alias python='python3'
 alias nyxt='flatpak run engineer.atlas.Nyxt'
