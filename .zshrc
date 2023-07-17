@@ -106,52 +106,8 @@ bindkey -M vicmd '^r' fzf-history-widget
 bindkey -M vicmd '/' fzf-history-widget
 bindkey -M vicmd '?' fzf-history-widget
 
-alias -g ls="exa"
-alias -g ll="exa -l"
-alias -g la="exa -al"
-alias -g bat="batcat"
-alias -g bman="batman"
-alias -g brg="batgrep"
-alias -g pbat="prettybat"
-alias -g fd="fdfind"
-
-_fze() {
-  find() {
-    fd --type d --hidden --follow --exclude ".git" . $1
-  }
-  fuzzy() {
-    fzf --preview 'batcat -n --color=always {}' 
-  }
-
-  if [[ -n $2 ]]; then
-    $1 $(find $2 | fuzzy) 
-  else
-    $1 $(find . | fuzzy )
-  fi
-
-}
-
-_fzcd() {
-  find() {
-    fd --type d --hidden --follow --exclude ".git" . $1
-  }
-  fuzzy() {
-    fzf --preview 'tree -C {}| head -200'
-  }
-  if [[ -n $1 ]] ; then
-    cd $(find $1 | fuzzy )
-  else
-    cd $(find . | fuzzy )
-  fi
-}
-
-alias -g fzcd=_fzcd
-alias -g fze=_fze
-
-alias python='python3'
-alias nyxt='flatpak run engineer.atlas.Nyxt'
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
+source $HOME/.config/zsh/alias.sh
+source $HOME/.config/zsh/custom_stuff.sh
 source $HOME/.config/zsh/fzf.zsh
 source $HOME/.config/zsh/ssh-agent.zsh
 
