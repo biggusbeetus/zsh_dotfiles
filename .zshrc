@@ -70,7 +70,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-vi-mode fzf fzf-tab)
+plugins=(git vi-mode fzf fzf-tab)
 
 DISABLE_MAGIC_FUNCTIONS=true
 source $ZSH/oh-my-zsh.sh
