@@ -106,7 +106,7 @@ bindkey -M vicmd '^r' fzf-history-widget
 bindkey -M vicmd '/' fzf-history-widget
 bindkey -M vicmd '?' fzf-history-widget
 
-source $HOME/.config/zsh/alias.sh
+source $HOME/.config/zsh/.aliases
 source $HOME/.config/zsh/custom_stuff.sh
 source $HOME/.config/zsh/fzf.zsh
 source $HOME/.config/zsh/ssh-agent.zsh
