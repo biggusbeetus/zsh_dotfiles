@@ -1,11 +1,14 @@
 alias -g ls="exa"
 alias -g ll="exa -l"
 alias -g la="exa -al"
-alias -g bat="batcat"
-alias -g bman="batman"
-alias -g brg="batgrep"
-alias -g pbat="prettybat"
-alias -g fd="fdfind"
+
+if [[ $OSTYPE != "*freebsd*" ]]; then
+  alias -g bat="batcat";
+  alias -g bman="batman";
+  alias -g brg="batgrep";
+  alias -g pbat="prettybat";
+  alias -g fd="fdfind";
+fi
 
 alias -g fcd=_fuzzy_cd
 alias -g fe=_fuzzy_execute

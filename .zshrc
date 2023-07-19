@@ -111,7 +111,6 @@ source $HOME/.config/zsh/custom_stuff.sh
 source $HOME/.config/zsh/fzf.zsh
 source $HOME/.config/zsh/ssh-agent.zsh
 
-eval "$(starship init zsh)"
-# BEGIN ANSIBLE MANAGED BLOCK
-export PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
-# END ANSIBLE MANAGED BLOCK
+if [[ $OSTYPE != *bsd* ]]; then
+  eval "$(starship init zsh)"
+fi
