@@ -1,7 +1,7 @@
 _find() {
   local find_path=$1
   local find_options=( ${@:2} )
-  fdfind $find_options --unrestricted --hidden --follow --exclude ".git" -- . $find_path
+  fd $find_options --unrestricted --hidden --follow --exclude ".git" -- . $find_path
 }
 
 _fuzzy_execute() {
