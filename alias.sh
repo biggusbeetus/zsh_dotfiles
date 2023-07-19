@@ -2,7 +2,8 @@ alias -g ls="exa"
 alias -g ll="exa -l"
 alias -g la="exa -al"
 
-if [[ $OSTYPE != "*freebsd*" ]]; then
+if [[ $OSTYPE != *freebsd* ]]; then
+  echo $OSTYPE 
   alias -g bat="batcat";
   alias -g bman="batman";
   alias -g brg="batgrep";
