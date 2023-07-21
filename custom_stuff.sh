@@ -16,7 +16,7 @@ _fuzzy_execute() {
    else
      cd $(dirname $result)
   fi
-    $command $result[@]
+    $command basename $result[@]
 }
 
 _fuzzy_cd() {
@@ -32,4 +32,8 @@ _fuzzy_cd() {
 
 _wezterm_ssh() {
   setsid wezterm ssh $@ && wezterm cli kill-pane
+}
+
+_source_zsh() {
+  source $XDG_CONFIG_HOME/zsh/.zshrc
 }
