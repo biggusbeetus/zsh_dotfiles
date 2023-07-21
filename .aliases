@@ -13,6 +13,7 @@ fi
 
 alias -g fcd=_fuzzy_cd
 alias -g fe=_fuzzy_execute
+alias -g wsh=_wezterm_ssh
 
 alias python='python3'
 alias nyxt='flatpak run engineer.atlas.Nyxt'

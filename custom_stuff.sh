@@ -30,3 +30,6 @@ _fuzzy_cd() {
     cd $(_find $find_path --type directory | fuzzy )
 }
 
+_wezterm_ssh() {
+  setsid wezterm ssh $@ && wezterm cli kill-pane
+}
