@@ -16,7 +16,7 @@ _fuzzy_execute() {
    else
      cd $(dirname $result)
   fi
-    $command basename $result[@]
+    $command $(basename $result[@])
 }
 
 _fuzzy_cd() {
