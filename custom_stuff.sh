@@ -27,7 +27,7 @@ _fuzzy_cd() {
   if [[ -z $find_path ]] ; then
     find_path=/
   fi
-    cd $(_find $find_path --type directory | fuzzy )
+    cd "$(_find $find_path --type directory | fuzzy )"
 }
 
 _wezterm_ssh() {
