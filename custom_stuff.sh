@@ -1,14 +1,14 @@
 _find() {
   local find_path=$1
   local find_options=( ${@:2} )
-  fd $find_options --unrestricted --hidden --follow --exclude ".git" -- . $find_path
+  fd $find_options --unrestricted --hidden --follow --exclude ".git" --exclude ".snapshots" --exclude "/proc" -- . $find_path
 }
 
 _fuzzy_execute() {
   local find_path=$2
   local command=$1
   if [[ -z $find_path ]]; then
-    find_path=/
+    find_path=.
   fi
     local result=$(_find $find_path | fzf ) 
   if [[ -d $result ]]; then
@@ -25,7 +25,7 @@ _fuzzy_cd() {
   }
   local find_path=$1
   if [[ -z $find_path ]] ; then
-    find_path=/
+    find_path=.
   fi
     cd "$(_find $find_path --type directory | fuzzy )"
 }
