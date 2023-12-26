@@ -1,6 +1,6 @@
-alias -g ls="exa"
-alias -g ll="exa -l"
-alias -g la="exa -al"
+alias -g ls="lsd"
+alias -g ll="lsd -l"
+alias -g la="lsd -al"
 
 if [[ $OSTYPE != *freebsd* ]]; then
   alias -g bat="batcat";

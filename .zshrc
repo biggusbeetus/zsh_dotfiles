@@ -99,9 +99,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="/usr/local/cuda-12.1/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda-12.1/lib64:$LD_LIBRARY_PATH"
- 
+export PATH="$HOME/.bin:$PATH"
+
 bindkey -M vicmd '^r' fzf-history-widget
 bindkey -M vicmd '/' fzf-history-widget
 bindkey -M vicmd '?' fzf-history-widget
