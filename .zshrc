@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="minimal"
+ZSH_THEME="bira"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -102,11 +102,6 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
-export GOPRIVATE="dev.azure.com"
-export GONOPROXY="dev.azure.com"
-export GOSUMDB="sum.golang.org https://p-nexus-3.development.nl.eu.abnamro.com:8443/repository/go-sumdb"
-export GOPROXY="https://p-nexus-3.development.nl.eu.abnamro.com:8443/repository/go-group/"
-
 bindkey -M vicmd '^r' fzf-history-widget
 bindkey -M vicmd '/' fzf-history-widget
 bindkey -M vicmd '?' fzf-history-widget
@@ -114,7 +109,7 @@ bindkey -M vicmd '?' fzf-history-widget
 source $HOME/.config/zsh/.aliases
 source $HOME/.config/zsh/custom_stuff.sh
 source $HOME/.config/zsh/fzf.zsh
-# source $HOME/.config/zsh/ssh-agent.zsh
+source $HOME/.config/zsh/ssh-agent.zsh
 
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
