@@ -1,0 +1,16 @@
+alias -g ls="ls --color=auto"
+alias -g ll="ls -la"
+alias -g la="ll"
+alias -g l.="ls --color=auto -d .*"
+
+alias -g fcd=_fuzzy_cd
+alias -g fe=_fuzzy_execute
+alias -g sc=_source_zsh
+
+alias python='python3'
+alias pip='pip3'
+alias gtree='git log --graph --decorate --all --oneline'
+alias gs='git status'
+alias sed='gsed'
+alias resctl='kubectl -nresc'
+alias victmctl='kubectl -nvictm'
